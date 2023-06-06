@@ -1,16 +1,37 @@
 <?php
 
-echo("hello");
 
-public function writeMessage(string $string):void
-{
-        ehco ("hello there $string");        
+class WriteMessages{
+    
+    private string $name;
+    private string $surname;
+
+
+    public function __construct(string $recievedName,  string $recivedSurname)
+    {
+        $this->name = $recievedName;
+        $this->surname = $recivedSurname;
     }
 
-writeMessage("string");
+    public function writeAllMessages():string
+    {
+        $this->writeHelloWord();
+        $this->writeSecondHelloWord();
+        return "<br> this is a test ";
+    }
 
-class Messages 
-{
-    public function writeParameterMessage(){
-            }
+
+    public function writeHelloWord():void
+    {
+        echo("hello there". $this->name ." ". $this->surname .". <br>");
+    }
+
+    public function writeSecondHelloWord():void
+    {
+        echo("hello ". $this->name ."your surname is : ".  $this->surname."<br>");    
+    }
+
 }
+
+?>
+
